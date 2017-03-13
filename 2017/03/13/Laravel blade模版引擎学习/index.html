@@ -6,42 +6,42 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>吴金东的个人博客</title>
+  <title>Laravel blade模版引擎学习 | 吴金东的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Laravel blade模版引擎学习
+[TOC]
 ##一    .什么是模版引擎？
 
 模板引擎（这里特指用于Web开发的模板引擎）是为了使用户界面与业务数据（内容）分离而产生的，它可以生成特定格式的文档，用于网站的模板引擎就会生成一个标准的HTML文档。
 ##二 .模版引擎的三个作用
 
 1.变量值的输出（echo）
-2.条件判断和循环（if ... else、for、foreach、while）
-3.引入或">
+2.条件判断和循环（if ... else、for、foreach、while）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="吴金东的个人博客">
+<meta property="og:title" content="Laravel blade模版引擎学习">
 <meta property="og:url" content="http://yoursite.com/2017/03/13/Laravel blade模版引擎学习/index.html">
 <meta property="og:site_name" content="吴金东的个人博客">
 <meta property="og:description" content="Laravel blade模版引擎学习
+[TOC]
 ##一    .什么是模版引擎？
 
 模板引擎（这里特指用于Web开发的模板引擎）是为了使用户界面与业务数据（内容）分离而产生的，它可以生成特定格式的文档，用于网站的模板引擎就会生成一个标准的HTML文档。
 ##二 .模版引擎的三个作用
 
 1.变量值的输出（echo）
-2.条件判断和循环（if ... else、for、foreach、while）
-3.引入或">
-<meta property="og:updated_time" content="2017-03-13T15:38:21.000Z">
+2.条件判断和循环（if ... else、for、foreach、while）">
+<meta property="og:updated_time" content="2017-03-13T15:44:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吴金东的个人博客">
+<meta name="twitter:title" content="Laravel blade模版引擎学习">
 <meta name="twitter:description" content="Laravel blade模版引擎学习
+[TOC]
 ##一    .什么是模版引擎？
 
 模板引擎（这里特指用于Web开发的模板引擎）是为了使用户界面与业务数据（内容）分离而产生的，它可以生成特定格式的文档，用于网站的模板引擎就会生成一个标准的HTML文档。
 ##二 .模版引擎的三个作用
 
 1.变量值的输出（echo）
-2.条件判断和循环（if ... else、for、foreach、while）
-3.引入或">
+2.条件判断和循环（if ... else、for、foreach、while）">
   
     <link rel="alternative" href="/atom.xml" title="吴金东的个人博客" type="application/atom+xml">
   
@@ -184,9 +184,25 @@
             <article id="post-Laravel blade模版引擎学习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Laravel blade模版引擎学习
+    </h1>
+  
+
+        
+        <a href="/2017/03/13/Laravel blade模版引擎学习/" class="archive-article-date">
+  	<time datetime="2017-03-13T15:44:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Laravel-blade模版引擎学习"><a href="#Laravel-blade模版引擎学习" class="headerlink" title="Laravel blade模版引擎学习"></a>Laravel blade模版引擎学习</h1><hr>
+<p>[TOC]</p>
 <p>##<strong>一    .什么是模版引擎？</strong></p>
 <blockquote>
 <p>模板引擎（这里特指用于Web开发的模板引擎）是为了使用户界面与业务数据（内容）分离而产生的，它可以生成特定格式的文档，用于网站的模板引擎就会生成一个标准的HTML文档。</p>
@@ -199,12 +215,17 @@
 <blockquote>
 <p>Blade是Laravel提供的一个非常简单、强大的模板引擎，不同于其他流行的PHP模板引擎，Blade在视图中并不约束你使用PHP原生代码。所有的Blade视图都会被编译成原生PHP代码并缓存起来直到被修改，这意味着对应用的性能而言Blade基本上是零开销。Blade视图文件使用.blade.php文件扩展并存放在resources/views目录下。</p>
 </blockquote>
-<p><strong>代码示意</strong></p>
-<html><br><br>    <head><br>        <title>Laravel</title><br><br>        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css"><br><br>        <style><br>            html, body {<br>                height: 100%;<br>            }<br><br>            body {<br>                margin: 0;<br>                padding: 0;<br>                width: 100%;<br>                display: table;<br>                font-weight: 100;<br>                font-family: ‘Lato’;<br>            }<br><br>            .container {<br>                text-align: center;<br>                display: table-cell;<br>                vertical-align: middle;<br>            }<br><br>            .content {<br>                text-align: center;<br>                display: inline-block;<br>            }<br><br>            .title {<br>                font-size: 96px;<br>            }<br>        </style><br>    </head><br>    <body><br>        <div class="container"><br>            <div class="content"><br>                <div class="title">Laravel 5</div><br>                &lt;?php echo “welcome”; ?&gt;<br>            </div><br>        </div><br>    </body><br><br></html>
-
+<p>代码示意<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;title&gt;Laravel&lt;/title&gt;</div><div class="line"></div><div class="line">        &lt;link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css"&gt;</div><div class="line"></div><div class="line">        &lt;style&gt;</div><div class="line">            html, body &#123;</div><div class="line">                height: 100%;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            body &#123;</div><div class="line">                margin: 0;</div><div class="line">                padding: 0;</div><div class="line">                width: 100%;</div><div class="line">                display: table;</div><div class="line">                font-weight: 100;</div><div class="line">                font-family: 'Lato';</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            .container &#123;</div><div class="line">                text-align: center;</div><div class="line">                display: table-cell;</div><div class="line">                vertical-align: middle;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            .content &#123;</div><div class="line">                text-align: center;</div><div class="line">                display: inline-block;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            .title &#123;</div><div class="line">                font-size: 96px;</div><div class="line">            &#125;</div><div class="line">        &lt;/style&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;div class="container"&gt;</div><div class="line">            &lt;div class="content"&gt;</div><div class="line">                &lt;div class="title"&gt;Laravel 5&lt;/div&gt;</div><div class="line">                &lt;?php echo "welcome"; ?&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>这里我们注意到，在上述代码中不仅有html代码还有一句<figure class="highlight plain"><figcaption><span>echo "welcome"; ?>```这是因为blade引擎默认的文件都是php文件，与普通的html文件不同，我们不仅能在里面写html代码更能编写php代码。除此之外，blade引擎还自带了特殊的关键字：@section、@yield、@extends、@parent等命令。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">**@section用来标记一个blade模版中的一部分，用@yield让这部分在另一个模版中表示出来。**</div><div class="line">&lt;html&gt;</div><div class="line"></div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;title&gt;App Name - @yield(&apos;title&apos;)&lt;/title&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        @section(&apos;sidebar&apos;)</div><div class="line">            This is the master sidebar.</div><div class="line">        @show</div><div class="line"></div><div class="line">        &lt;div class=&quot;container&quot;&gt;</div><div class="line">            @yield(&apos;content&apos;)</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">**&gt;上述代码表示标记了一个名叫:sidebar的部分用来在之后的地方使用，并且用到了以前标记的 title 和 content这两个部分。**</div><div class="line">&gt;定义子页面的时候，可以使用Blade的@extends指令来指定子页面所继承的布局，继承一个Blade布局的视图将会使用@section指令注入内容到布局的片段中，记住，如上面例子所示，这些片段的内容将会显示在布局中使用@yield的地方：</div></pre></td></tr></table></figure></p>
+<p>这里我们注意到，在上述代码中不仅有html代码还有一句<figure class="highlight plain"><figcaption><span>echo "welcome"; ?>```这是因为blade引擎默认的文件都是php文件，与普通的html文件不同，我们不仅能在里面写html代码更能编写php代码。除此之外，blade引擎还自带了特殊的关键字：@section、@yield、@extends、@parent等命令。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">**@section用来标记一个blade模版中的一部分，用@yield让这部分在另一个模版中表示出来。**</div></pre></td></tr></table></figure></p>
 </blockquote>
+<!-- 存放在 resources/views/layouts/master.blade.php -->
+<p><html><br>    <head><br>        <title>App Name - @yield(‘title’)</title><br>    </head><br>    <body><br>        @section(‘sidebar’)<br>            This is the master sidebar.<br>        @show</body></html></p>
+<pre><code>    &lt;div class=&quot;container&quot;&gt;
+        @yield(&apos;content&apos;)
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">**&gt;上述代码表示标记了一个名叫:sidebar的部分用来在之后的地方使用，并且用到了以前标记的 title 和 content这两个部分。**</div><div class="line">&gt;定义子页面的时候，可以使用Blade的@extends指令来指定子页面所继承的布局，继承一个Blade布局的视图将会使用@section指令注入内容到布局的片段中，记住，如上面例子所示，这些片段的内容将会显示在布局中使用@yield的地方：</div></pre></td></tr></table></figure></p>
 <!-- 存放在 resources/views/layouts/child.blade.php -->
 <p>@extends(‘layouts.master’)</p>
 <p>@section(‘title’, ‘Page Title’)</p>
