@@ -164,7 +164,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<h2 id="titile-C-C-编译器中“字节对齐”的工作原理"><a href="#titile-C-C-编译器中“字节对齐”的工作原理" class="headerlink" title="titile:C/C++编译器中“字节对齐”的工作原理"></a>titile:C/C++编译器中“字节对齐”的工作原理</h2><p>##一 .字节对齐的概念</p>
+<h2 id="title-C-C-编译器中“字节对齐”的工作原理"><a href="#title-C-C-编译器中“字节对齐”的工作原理" class="headerlink" title="title:C/C++编译器中“字节对齐”的工作原理"></a>title:C/C++编译器中“字节对齐”的工作原理</h2><p>$ 一 .字节对齐的概念</p>
 <blockquote>
 <p>编译器在编译我们写好的c/c++代码时会根据我们设置的“字节对齐”方式来对我们所定义元素进行多种不同方式的储存。<br>在单字节对齐的条件下声明如下代码：<br><strong>char a; short b;</strong><br>我们知道 <strong>char</strong> 类型默认是1个字节（8个比特），short类型是两个字节（16比特），在一般的操作系统中默认的一个储存单元是2个字节，所以如果在单字节对齐的条件下，上述代码会被储存为如下形式：（下图所示每一行为一个存储单元）</p>
 </blockquote>
@@ -173,7 +173,7 @@
 <p><strong>按2字节的对齐方式进行储存则有如下对齐方式：（每一行代表一个存储单元）</strong></p>
 </blockquote>
 <p><img src="/img/jizu_danyuan1.png" alt="Alt text"></p>
-<p>##二 .实验步骤及环境</p>
+<p>$ 二 .实验步骤及环境</p>
 <blockquote>
 <p><strong>本人的程序编译环境是mac，所用的编译器是xcode，上网查资料发现xcode没有自带的字节对齐选项，只能通过c/c++自带的代码进行字节对齐。下图给出一个结构体分别在1 2 4 8 16字节下在二进制文件中的存储方式。<br>所使用的二进制文件编辑器的vim，使用方式：在命令行中输入 vim -b 文件路径/test.txt。由于结构体是以二进制的形式存储在文件中所以打开文件后将会出现乱码显示如图：</strong></p>
 </blockquote>
@@ -215,7 +215,7 @@
 <p>同时在8字节和16字节只剩下x3（4字节时）产生的文件为:</p>
 </blockquote>
 <p><img src="/img/jizu_shiyan4_9.png" alt="Alt text"></p>
-<p>##三 .c/c++中设置字节对齐的几种方式</p>
+<p>$ 三 .c/c++中设置字节对齐的几种方式</p>
 <blockquote>
 <p>1.使用pragma pack的方式选择字节对齐：</p>
 </blockquote>
@@ -224,7 +224,7 @@
 <p>2.使用<strong>attribute</strong>选项</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> GNUC_PACKED __attribute__((packed))</span></div><div class="line"><span class="keyword">struct</span> PACKED test</div><div class="line">&#123;</div><div class="line"><span class="keyword">char</span> x1;</div><div class="line"><span class="keyword">short</span> x2;</div><div class="line"><span class="keyword">float</span> x3;</div><div class="line"><span class="keyword">char</span> x4;</div><div class="line">&#125;GNUC_PACKED;</div></pre></td></tr></table></figure>
-<p>##写在最后</p>
+<p>$ 写在最后</p>
 <blockquote>
 <p>虽然这只是一次小小的计组作业，但是却能让我们深刻的体会到字节对齐的概念，并且深入理解内存的存储方式。</p>
 </blockquote>
