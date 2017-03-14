@@ -158,6 +158,107 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-C:C++编译器中“字节对齐”的工作原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="titile-C-C-编译器中“字节对齐”的工作原理"><a href="#titile-C-C-编译器中“字节对齐”的工作原理" class="headerlink" title="titile:C/C++编译器中“字节对齐”的工作原理"></a>titile:C/C++编译器中“字节对齐”的工作原理</h2><p>##一 .字节对齐的概念</p>
+<blockquote>
+<p>编译器在编译我们写好的c/c++代码时会根据我们设置的“字节对齐”方式来对我们所定义元素进行多种不同方式的储存。<br>在单字节对齐的条件下声明如下代码：<br><strong>char a; short b;</strong><br>我们知道 <strong>char</strong> 类型默认是1个字节（8个比特），short类型是两个字节（16比特），在一般的操作系统中默认的一个储存单元是2个字节，所以如果在单字节对齐的条件下，上述代码会被储存为如下形式：（下图所示每一行为一个存储单元）</p>
+</blockquote>
+<p><img src="/img/jizu_danyuan.png" alt="Alt text"></p>
+<blockquote>
+<p><strong>按2字节的对齐方式进行储存则有如下对齐方式：（每一行代表一个存储单元）</strong></p>
+</blockquote>
+<p><img src="/img/jizu_danyuan1.png" alt="Alt text"></p>
+<p>##二 .实验步骤及环境</p>
+<blockquote>
+<p><strong>本人的程序编译环境是mac，所用的编译器是xcode，上网查资料发现xcode没有自带的字节对齐选项，只能通过c/c++自带的代码进行字节对齐。下图给出一个结构体分别在1 2 4 8 16字节下在二进制文件中的存储方式。<br>所使用的二进制文件编辑器的vim，使用方式：在命令行中输入 vim -b 文件路径/test.txt。由于结构体是以二进制的形式存储在文件中所以打开文件后将会出现乱码显示如图：</strong></p>
+</blockquote>
+<p><img src="/img/jizu1.png" alt="Alt text"></p>
+<blockquote>
+<p>之后输入命令 :%!xxd,将文件转换成16进制后进行查看。<br>以下是如下代码以不同字节存储在文件中的不同体现，代码如下：</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</div><div class="line">    <span class="comment">//计算机组成原理——字节对齐测试</span></div><div class="line">    <span class="meta">#<span class="meta-keyword">pragma</span> pack(1)</span></div><div class="line">    <span class="keyword">struct</span> test1</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">char</span> x1;</div><div class="line">        <span class="keyword">short</span> x2;</div><div class="line">        <span class="keyword">float</span> x3;</div><div class="line">        <span class="keyword">char</span> x4;</div><div class="line">    &#125;;</div><div class="line">    test1 a;</div><div class="line">    FILE *fp;</div><div class="line">    fp = fopen(<span class="string">"/Users/wujindong/Downloads/test1.txt"</span>, <span class="string">"wb"</span>);</div><div class="line">    fwrite(&amp;a,<span class="keyword">sizeof</span>(a),<span class="number">1</span>,fp);</div><div class="line">    fclose(fp);</div><div class="line"><span class="meta">#<span class="meta-keyword">pragma</span> pack(2)</span></div><div class="line">    <span class="keyword">struct</span> test2</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">char</span> x1;</div><div class="line">        <span class="keyword">short</span> x2;</div><div class="line">        <span class="keyword">float</span> x3;</div><div class="line">        <span class="keyword">char</span> x4;</div><div class="line">    &#125;;</div><div class="line">    test2 b;</div><div class="line">    fp = fopen(<span class="string">"/Users/wujindong/Downloads/test2.txt"</span>, <span class="string">"wb"</span>);</div><div class="line">    fwrite(&amp;b,<span class="keyword">sizeof</span>(b),<span class="number">1</span>,fp);</div><div class="line">    fclose(fp);</div><div class="line"><span class="meta">#<span class="meta-keyword">pragma</span> pack(4)</span></div><div class="line">    <span class="keyword">struct</span> test4</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">char</span> x1;</div><div class="line">        <span class="keyword">short</span> x2;</div><div class="line">        <span class="keyword">float</span> x3;</div><div class="line">        <span class="keyword">char</span> x4;</div><div class="line">    &#125;;</div><div class="line">    test4 c;</div><div class="line">    fp = fopen(<span class="string">"/Users/wujindong/Downloads/test4.txt"</span>, <span class="string">"wb"</span>);</div><div class="line">    fwrite(&amp;c,<span class="keyword">sizeof</span>(c),<span class="number">1</span>,fp);</div><div class="line">    fclose(fp);</div><div class="line"><span class="meta">#<span class="meta-keyword">pragma</span> pack(8)</span></div><div class="line">    <span class="keyword">struct</span> test8</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">char</span> x1;</div><div class="line">        <span class="keyword">short</span> x2;</div><div class="line">        <span class="keyword">float</span> x3;</div><div class="line">        <span class="keyword">char</span> x4;</div><div class="line">    &#125;;</div><div class="line">    test8 d;</div><div class="line">    fp = fopen(<span class="string">"/Users/wujindong/Downloads/test8.txt"</span>, <span class="string">"wb"</span>);</div><div class="line">    fwrite(&amp;d,<span class="keyword">sizeof</span>(d),<span class="number">1</span>,fp);</div><div class="line">    fclose(fp);</div><div class="line"><span class="meta">#<span class="meta-keyword">pragma</span> pack(16)</span></div><div class="line">    <span class="keyword">struct</span> test16</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">char</span> x1;</div><div class="line">        <span class="keyword">short</span> x2;</div><div class="line">        <span class="keyword">float</span> x3;</div><div class="line">        <span class="keyword">char</span> x4;</div><div class="line">    &#125;;</div><div class="line">    test16 e;</div><div class="line">    fp = fopen(<span class="string">"/Users/wujindong/Downloads/test16.txt"</span>, <span class="string">"wb"</span>);</div><div class="line">    fwrite(&amp;e,<span class="keyword">sizeof</span>(e),<span class="number">1</span>,fp);</div><div class="line">    fclose(fp);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong><em>其产生的文件对应字节如下：</em></strong></p>
+</blockquote>
+<p><img src="/img/jizu_wenjian.png" alt="Alt text"></p>
+<blockquote>
+<p><strong><em>用二进制查看工具结果如下（以下顺序是：1 2 4 8 16字节）</em></strong></p>
+</blockquote>
+<p><img src="/img/jizu2.png" alt="Alt text"><br><img src="/img/jizu3.png" alt="Alt text"><br><img src="/img/jizu4.png" alt="Alt text"><br><img src="/img/jizu5.png" alt="Alt text"><br><img src="/img/jizu6.png" alt="Alt text"></p>
+<blockquote>
+<p><strong>由上述分析及图示可以得知，在1字节存储时，x1与x4被分配到一个储存单元中，x2在一个储存单元中，x3占两个储存单元。在2字节储存中，x1 x4被分配到两个不同的单元中，x2 x3和1字节时一样。</strong></p>
+<p><strong>在4字节存储方式时作出如下实验：<br>先删除 char x4 结果 原先12字节的文件变成了8字节，</strong></p>
+</blockquote>
+<p><img src="/img/jizu_shiyan4.png" alt="Alt text"><br><img src="/img/jizu_shiyan4_1.png" alt="Alt text"></p>
+<blockquote>
+<p>在删除变量x1发现，文件还是8字节，由此可以的出：原先四个变量为，x1(1字节)，x2(两字节)被存储在一个4字节的存储单元中，x3(4字节)，x4（1字节）被分别存储在一个4字节的存储单元中。同理，8字节和16字节作出如下同样实验得出：</p>
+</blockquote>
+<p><img src="/img/jizu_shiyan4_2.png" alt="Alt text"></p>
+<blockquote>
+<p>8字节时，删除x1（1字节）文件还是12字节，删除x2（2字节）后文件变为8字节，可知x1和x3被存储在一个4字节空间内。在删除x3（4字节）后 文件变为1字节，说明当只剩下一个变量时，即时选择了字节对齐，编译器也只会保留那个变量当前字节。<br>除此之外只删除变量x3（4字节）会出现如下情景</p>
+</blockquote>
+<p><img src="/img/jizu_shiyan4_3.png" alt="Alt text"><br><img src="/img/jizu_shiyan4_4.png" alt="Alt text"></p>
+<blockquote>
+<p>剩下的x1 x2 x4三个变量只有6字节大小，说明每个变量各自占一个2字节的存储单元。<br>16字时，只删除x1（1字节）出现的情况与8字节相同剩下的文件为8字节，但是删除x3（4字节）后产生的文件为8字节而8进制的时候为6字节</p>
+</blockquote>
+<p><img src="/img/jizu_shiyan4_5.png" alt="Alt text"><br><img src="/img/jizu_shiyan4_6.png" alt="Alt text"></p>
+<blockquote>
+<p>当只剩下一个变量x1时在8字节下产生的文件为1字节，在16字节文件下产生的文件为8字节。</p>
+</blockquote>
+<p><img src="/img/jizu_shiyan4_7.png" alt="Alt text"><br><img src="/img/jizu_shiyan4_8.png" alt="Alt text"></p>
+<blockquote>
+<p>同时在8字节和16字节只剩下x3（4字节时）产生的文件为:</p>
+</blockquote>
+<p><img src="/img/jizu_shiyan4_9.png" alt="Alt text"></p>
+<p>##三 .c/c++中设置字节对齐的几种方式</p>
+<blockquote>
+<p>1.使用pragma pack的方式选择字节对齐：</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">pragma</span> pack(1) <span class="comment">//让编译器对这个结构作1字节对齐</span></span></div><div class="line"><span class="keyword">struct</span> test</div><div class="line">&#123;</div><div class="line"><span class="keyword">char</span> x1;</div><div class="line"><span class="keyword">short</span> x2;</div><div class="line"><span class="keyword">float</span> x3;</div><div class="line"><span class="keyword">char</span> x4;</div><div class="line">&#125;;</div><div class="line"><span class="meta">#<span class="meta-keyword">pragma</span> pack() <span class="comment">//取消1字节对齐，恢复为默认4字节对齐</span></span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>2.使用<strong>attribute</strong>选项</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> GNUC_PACKED __attribute__((packed))</span></div><div class="line"><span class="keyword">struct</span> PACKED test</div><div class="line">&#123;</div><div class="line"><span class="keyword">char</span> x1;</div><div class="line"><span class="keyword">short</span> x2;</div><div class="line"><span class="keyword">float</span> x3;</div><div class="line"><span class="keyword">char</span> x4;</div><div class="line">&#125;GNUC_PACKED;</div></pre></td></tr></table></figure>
+<p>##写在最后</p>
+<blockquote>
+<p>虽然这只是一次小小的计组作业，但是却能让我们深刻的体会到字节对齐的概念，并且深入理解内存的存储方式。</p>
+</blockquote>
+<p>文章为作者原创，转载请注明出处。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/14/C:C++编译器中“字节对齐”的工作原理/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-Laravel blade模版学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
