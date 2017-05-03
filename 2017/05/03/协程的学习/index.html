@@ -6,17 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | 吴金东的个人博客</title>
+  <title>协程的学习 | 吴金东的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="天津大学15级本科生">
-<meta property="og:type" content="website">
-<meta property="og:title" content="吴金东的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="什么是协程
+协程与子例程一样，协程（coroutine）也是一种程序组件。
+协程不是进程或线程，其执行过程更类似于子例程，或者说不带返回值的函数调用。
+一个程序可以包含多个协程，可以对比与一个进程包含多个线程，因而下面我们来比较协程和线程。我们知道多个线程相对独立，有自己的上下文，切换受系统控制；而协程也相对独立，有自己的上下文，但是其切换由自己控制，由当前协程切换到其他协程由当前协程来控制。
+在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="协程的学习">
+<meta property="og:url" content="http://yoursite.com/2017/05/03/协程的学习/index.html">
 <meta property="og:site_name" content="吴金东的个人博客">
-<meta property="og:description" content="天津大学15级本科生">
+<meta property="og:description" content="什么是协程
+协程与子例程一样，协程（coroutine）也是一种程序组件。
+协程不是进程或线程，其执行过程更类似于子例程，或者说不带返回值的函数调用。
+一个程序可以包含多个协程，可以对比与一个进程包含多个线程，因而下面我们来比较协程和线程。我们知道多个线程相对独立，有自己的上下文，切换受系统控制；而协程也相对独立，有自己的上下文，但是其切换由自己控制，由当前协程切换到其他协程由当前协程来控制。
+在">
+<meta property="og:image" content="http://yoursite.com/public/img/xiecheng.png">
+<meta property="og:updated_time" content="2017-05-03T10:08:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吴金东的个人博客">
-<meta name="twitter:description" content="天津大学15级本科生">
+<meta name="twitter:title" content="协程的学习">
+<meta name="twitter:description" content="什么是协程
+协程与子例程一样，协程（coroutine）也是一种程序组件。
+协程不是进程或线程，其执行过程更类似于子例程，或者说不带返回值的函数调用。
+一个程序可以包含多个协程，可以对比与一个进程包含多个线程，因而下面我们来比较协程和线程。我们知道多个线程相对独立，有自己的上下文，切换受系统控制；而协程也相对独立，有自己的上下文，但是其切换由自己控制，由当前协程切换到其他协程由当前协程来控制。
+在">
+<meta name="twitter:image" content="http://yoursite.com/public/img/xiecheng.png">
   
     <link rel="alternative" href="/atom.xml" title="吴金东的个人博客" type="application/atom+xml">
   
@@ -156,184 +171,162 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-协程的学习" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      协程的学习
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/03/协程的学习/" class="archive-article-date">
+
+        
+        <a href="/2017/05/03/协程的学习/" class="archive-article-date">
   	<time datetime="2017-05-03T10:08:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/03/协程的学习/">协程的学习</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是协程"><a href="#什么是协程" class="headerlink" title="什么是协程"></a>什么是协程</h2><blockquote>
+<p>协程与<a href="http://baike.baidu.com/item/%E5%AD%90%E4%BE%8B%E7%A8%8B/8231923" target="_blank" rel="external">子例程</a>一样，<strong>协程（coroutine）</strong>也是一种程序组件。</p>
+<p>协程不是进程或线程，其执行过程更类似于子例程，或者说不带返回值的<a href="http://baike.baidu.com/item/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/4127405" target="_blank" rel="external">函数调用</a>。</p>
+<p>一个程序可以包含多个协程，可以对比与一个进程包含多个线程，因而下面我们来比较协程和线程。我们知道多个线程相对独立，有自己的上下文，切换受系统控制；而协程也相对独立，有自己的上下文，但是其切换由自己控制，由当前协程切换到其他协程由当前协程来控制。</p>
+<p>在用通俗的话讲就是在一个单线程的程序中，通过一些操作，可以达到多线程程序的效果。</p>
+<p>下面看一组代码（以php为例）</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Task</span> </span>&#123;</div><div class="line">    <span class="keyword">protected</span> $taskId;</div><div class="line">    <span class="keyword">protected</span> $coroutine;</div><div class="line">    <span class="keyword">protected</span> $sendValue = <span class="keyword">null</span>;</div><div class="line">    <span class="keyword">protected</span> $beforeFirstYield = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($taskId, Generator $coroutine)</span> </span>&#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;taskId = $taskId;</div><div class="line">        <span class="keyword">$this</span>-&gt;coroutine = $coroutine;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getTaskId</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;taskId;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setSendValue</span><span class="params">($sendValue)</span> </span>&#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;sendValue = $sendValue;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">$this</span>-&gt;beforeFirstYield) &#123;</div><div class="line">            <span class="keyword">$this</span>-&gt;beforeFirstYield = <span class="keyword">false</span>;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;coroutine-&gt;current();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            $retval = <span class="keyword">$this</span>-&gt;coroutine-&gt;send(<span class="keyword">$this</span>-&gt;sendValue);</div><div class="line">            <span class="keyword">$this</span>-&gt;sendValue = <span class="keyword">null</span>;</div><div class="line">            <span class="keyword">return</span> $retval;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">isFinished</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> !<span class="keyword">$this</span>-&gt;coroutine-&gt;valid();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Scheduler</span> </span>&#123;</div><div class="line">    <span class="keyword">protected</span> $maxTaskId = <span class="number">0</span>;</div><div class="line">    <span class="keyword">public</span> $taskMap = []; <span class="comment">// taskId =&gt; task</span></div><div class="line">    <span class="keyword">protected</span> $taskQueue;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;taskQueue = <span class="keyword">new</span> SplQueue();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">newTask</span><span class="params">(Generator $coroutine)</span> </span>&#123;</div><div class="line">        $tid = ++<span class="keyword">$this</span>-&gt;maxTaskId;</div><div class="line">        $task = <span class="keyword">new</span> Task($tid, $coroutine);</div><div class="line">        <span class="keyword">$this</span>-&gt;taskMap[$tid] = $task;</div><div class="line">        <span class="keyword">$this</span>-&gt;schedule($task);</div><div class="line">        <span class="keyword">return</span> $tid;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">schedule</span><span class="params">(Task $task)</span> </span>&#123;</div><div class="line">        <span class="keyword">$this</span>-&gt;taskQueue-&gt;enqueue($task);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span> (!<span class="keyword">$this</span>-&gt;taskQueue-&gt;isEmpty()) &#123;</div><div class="line">            $task = <span class="keyword">$this</span>-&gt;taskQueue-&gt;dequeue();</div><div class="line">            $task-&gt;run();</div><div class="line">            <span class="keyword">if</span> ($task-&gt;isFinished()) &#123;</div><div class="line">                <span class="keyword">unset</span>(<span class="keyword">$this</span>-&gt;taskMap[$task-&gt;getTaskId()]);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">$this</span>-&gt;schedule($task);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">task1</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= <span class="number">10</span>; ++$i) &#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">"This is task 1 iteration $i.\n"</span>;</div><div class="line">    <span class="keyword">yield</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">task2</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt;= <span class="number">5</span>; ++$i) &#123;</div><div class="line">        <span class="keyword">echo</span> <span class="string">"This is task 2 iteration $i.\n"</span>;</div><div class="line">        <span class="keyword">yield</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$scheduler = <span class="keyword">new</span> Scheduler;</div><div class="line"></div><div class="line">$scheduler-&gt;newTask(task1());</div><div class="line">$scheduler-&gt;newTask(task2());</div><div class="line"><span class="comment">//var_dump($scheduler-&gt;taskMap);</span></div><div class="line">$scheduler-&gt;run();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>以上是一段简单的php代码，主要实现了两个类，一个任务类task、和一个任务调度类Scheduler。下面我们来看看这段程序运行的结果。</p>
+</blockquote>
+<p><img src="/public/img/xiecheng.png" alt="Alt text"></p>
+<blockquote>
+<p>可以看到，程序的运行结果并不是像一般的单线程程序一样，先执行完task1（）在执行task2（）而是在前5个任务时，task1和task2依次执行，当task2执行完成之后，task1的后5个任务也依次执行完成。</p>
+<p>那么问题来了，在一个单线程的程序里，是如何做到像多线程任务——生产-消费者模型的效果的呢？这就是协程的作用。</p>
+<p>理解协程之前，我们首先需要了解一下什么是<strong>调度器（Generator）</strong>，学过java的同学应该知道java中有<strong>迭代器（Iterator）</strong> 和 <strong>调度器（Generator）</strong></p>
+<p>php中的调度器和java中的类似，具体请自行百度。这里只需要知道以下几点：1、Generator::current()方法可以获取调度器当前的值，2、Generator::send($value)像调度器发送一个value，使得调度器的指针下移获取下一个值。3、Generator::vaild()返回值是bool型判断当前的调度器是否还有效（英文翻译过来是是否有效我的理解是是否还有值）</p>
+<p>那么我们现在开始看上方的代码：</p>
+<p>首先，通过两个newTask()方法将task1和task2两个任务放到了队列taskQueue中，此时队列里只有<strong>两个</strong>有效值。然后通过Task类的run方法运行从队列中dequeue出来的task任务，之后再将这个任务放回队列中。此时原先的两个任务就颠倒了一下位置。由队列<strong>先进先出</strong>的特点刚好为我们的<strong>“多线程”</strong>提供了一个保障。</p>
+<p>这里还要注意的就是<strong>yield</strong>关键字，这也是Generator的一个关键属性，带有yield关键字的函数，会被php解释器默认为Genratror的类型。而当程序执行到关键字<strong>yield</strong>时，就会将程序的<strong>控制权</strong>交给他的<strong>父例程</strong>这里可以理解为调用它的上层代码。也就是回到了Task类中的run()方法。接着$task-&gt;run()运行完就接着按照但线程的方式运行。这样一个我们就用<strong>协程</strong>的思想“伪造”了一个多线程的程序。是不是很酷呢？</p>
+</blockquote>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><blockquote>
+<p>所谓协程，我的理解就是通过对不同函数之间的特殊调用方式，在一个单线程的程序中达到多线程可以实现的某些效果。</p>
+<p>参考文章：<a href="http://www.tuicool.com/articles/NnQjMjN" target="_blank" rel="external">点击这里</a></p>
+</blockquote>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/05/03/协程的学习/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/21/python_pachong/" class="archive-article-date">
-  	<time datetime="2017-03-20T16:15:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/21/python_pachong/">基于python的简单爬虫架构学习</a>
-    </h1>
+  
+    <a href="/2017/03/21/python_pachong/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于python的简单爬虫架构学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/14/贪心算法典型例题记录/" class="archive-article-date">
-  	<time datetime="2017-03-14T04:20:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/14/贪心算法典型例题记录/">贪心算法典型例题记录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/14/C:C++编译器中“字节对齐”的工作原理/" class="archive-article-date">
-  	<time datetime="2017-03-14T02:07:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/14/C:C++编译器中“字节对齐”的工作原理/">C/C++编译器中“字节对齐”的工作原理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/13/Laravel blade模版学习/" class="archive-article-date">
-  	<time datetime="2017-03-13T15:49:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/13/Laravel blade模版学习/">Laravel blade模版引擎学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/13/hello-world/" class="archive-article-date">
-  	<time datetime="2017-03-13T07:51:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -356,8 +349,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
